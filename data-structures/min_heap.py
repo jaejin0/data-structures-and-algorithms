@@ -15,7 +15,7 @@ class MinHeap:
         self.max_size = max_size
         self.size = 0
         self.heap = [0] * (self.max_size + 1)
-        self.Heap[0] = float('-inf')
+        self.heap[0] = float('-inf')
         self.FRONT = 1
 
     def parent(self, pos):
@@ -54,8 +54,8 @@ class MinHeap:
 
         cur = self.size
         while self.heap[cur] < self.heap[self.parent(cur)]:
-            self.swap(current, self.parent(current))
-            current = self.parent(current)
+            self.swap(cur, self.parent(cur))
+            current = self.parent(cur)
 
     def Print(self):
         for i in range(0, (self.size // 2) + 1):
@@ -71,7 +71,7 @@ class MinHeap:
         popped = self.heap[self.FRONT]
         self.heap[self.FRONT] = self.heap[self.size]
         self.size -= 1
-        self.minheapify(self.FRONT)
+        self.heapify(self.FRONT)
         return popped
 
 if __name__ == "__main__": 
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     minHeap.insert(6) 
     minHeap.insert(22) 
     minHeap.insert(9) 
-    minHeap.minHeap() 
+    minHeap.min_heap() 
   
     minHeap.Print() 
     print("The Min val is " + str(minHeap.remove())) 
